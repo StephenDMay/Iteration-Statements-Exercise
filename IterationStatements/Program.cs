@@ -9,7 +9,8 @@
             var negative = max * -1;
             while (max >= negative)
             {
-                Console.WriteLine(negative);
+                Console.WriteLine(max);
+                max--;
             }
         }
 
@@ -23,43 +24,41 @@
         }
 
         //Write a method to accept two integers as parameterss and check whether they are equal or not
-        public static bool CheckIfEqual(int num1, int num2)
+        public static void CheckIfEqual(int num1, int num2)
         {
-            return num1 == num2;
+            Console.WriteLine(num1 == num2);
         }
 
         //Write a method to check whether a given number is even or odd
-        public static bool CheckIfEven(int num)
+        public static void CheckIfEven(int num)
         {
-            return num % 2 == 0;
+            Console.WriteLine(num % 2 == 0);
         }
         //Write a method to check whether a given number is positive or negative
-        public static bool CheckIfPositive(int num)
+        public static void CheckIfPositive(int num)
         {
-            return num >= 0;
+            Console.WriteLine(num >= 0);
         }
 
         //Write a method to read the age of a candidate and determine whether they can vote.
         //Hint: Use Parse or the safer TryParse() for an extra challenge
         //Parse()
         //TryParse()
-        public static bool CanVote(int age)
+        public static void CanVote(int age)
         {
+            var canVote = false;
             if (int.TryParse(age.ToString(), out int parsedAge))
             {
-                return parsedAge >= 18;
+                canVote = parsedAge >= 18;
             }
-            else
-            {
-                return false;
-            }
+            Console.WriteLine(canVote);
         }
 
         //Heatin Up Section:
         //Write a method to check if an integer(from the user) is in the range -10 to 10
-        public static bool IsInRange(int num)
+        public static void IsInRange(int num)
         {
-            return num >= -10 && num <= 10;
+            Console.WriteLine(num >= -10 && num <= 10);
         }
 
         //Write a method to display the multiplication table(from 1 to 12) of a given integer
@@ -76,12 +75,13 @@
         {
             PrintNumbers(1000);
             PrintNumbersBy3();
-            bool isEqual = CheckIfEqual(5, 5);
-            bool isOdd = CheckIfEven(7);
-            bool isPositive = CheckIfPositive(-10);
-            bool canVote = CanVote(18);
-            bool isInRange = IsInRange(5);
+            CheckIfEqual(5, 5);
+            CheckIfEven(7);
+            CheckIfPositive(-10);
+            CanVote(18);
+            IsInRange(5);
             MultiplicationTable(5);
+            Console.ReadLine();
         }
 
         
